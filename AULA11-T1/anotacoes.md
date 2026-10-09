@@ -73,3 +73,11 @@ FROM clientes
 LEFT JOIN pedidos ON clientes.id = pedidos.id_cliente;
 ```
 O LEFT: mostra tudo da tabela da esquerda (basicamente, é a tabela após o FROM).
+
+7- Para exibir apenas os alunos que não compraram nada:
+```sql
+SELECT clientes.nome,pedidos.produto
+FROM clientes
+LEFT JOIN pedidos ON clientes.id = pedidos.id_cliente
+WHERE pedidos.id IS NULL;
+```
